@@ -65,7 +65,7 @@ export default function Login() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>BOOK AN AMBULANCE</h1>
+              <h1>Student Education</h1>
               <p>To continue with us please login with your personal info</p>
               <button className="ghost" onClick={loginclick}>Log In</button>
             </div>

@@ -1,0 +1,39 @@
+/* Navbar.css */
+.navbar {
+    background-color: #4b0082; /* Dark purple */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background-color: #5c4bc7; /* Lighter purple on hover */
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+  
+  .nav-links li:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  

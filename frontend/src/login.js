@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Login() {
+  const [panelActive, setPanelActive] = useState(false);
+
+  const handleSignUpClick = () => {
+    setPanelActive(true);
+  };
+
+  const handleSignInClick = () => {
+    setPanelActive(false);
+  };
+
   return (
-    <div className="main-container">
+    <div className={`main-container ${panelActive ? "right-panel-active" : ""}`}>
       <div className="aside">
         <div className="logo">
-          <span>
-            <img className="site-logo" src="site-logo_2.png" alt="" />
-          </span>
+          <span><img className="site-logo" src="site-logo_2.png" alt=""/></span>
         </div>
         <div className="nav-toggler">
           <span></span>
@@ -41,7 +49,7 @@ export default function Login() {
             <span>or use your account</span>
             <input type="email" placeholder="Email" id="lname" />
             <input type="password" placeholder="Password" id="lpassword" />
-            <button type="button" onClick={Login1}>Log In</button>
+            <button type="button" onClick={Loginfunc}>Log In</button>
           </form>
         </div>
         <div className="overlay-container">
@@ -49,12 +57,12 @@ export default function Login() {
             <div className="overlay-panel overlay-left">
               <h1>BOOK AN AMBULANCE</h1>
               <p>To continue with us please login with your personal info</p>
-              <button className="ghost" id="signIn">Log In</button>
+              <button className="ghost" onClick={handleSignInClick}>Log In</button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1>Start your journey with us</h1>
               <p></p>
-              <button className="ghost" id="signUp">Sign Up</button>
+              <button className="ghost" onClick={handleSignUpClick}>Sign Up</button>
             </div>
           </div>
         </div>
@@ -68,33 +76,18 @@ function SignUp() {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  
+
   fetch(`http://127.0.0.1:8000/register/name=${name}&email=${email}&password=${password}`)
     .then(response => response.json())
     .then(data => window.location.href = '../index.html');
 }
 
 // Function to handle Login
-function Login1() {
+function Loginfunc() {
   const email = document.getElementById('lname').value;
   const password = document.getElementById('lpassword').value;
-  
+
   fetch(`http://127.0.0.1:8000/login/email=${email}&password=${password}`)
     .then(response => response.json())
     .then(data => window.location.href = '../index.html');
 }
-
-
-//New JS
-
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});

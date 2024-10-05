@@ -8,9 +8,6 @@ const fetchData = async () =>{
   console.log(response.data);
 }
 
-useEffect(()=>{
-  fetchData();
-}, [])
 
 function App() {
   return (

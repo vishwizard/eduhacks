@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-
+import axios from "axios";
 export default function Login() {
   const [panelActive, setPanelActive] = useState(false);
 
-  const handleSignUpClick = () => {
+  const loginclick = () => {
     setPanelActive(true);
   };
+
+  async function signUp(){
+    loginclick();
+    const data = {"name" : name, "email" : email, "password":password};
+    // let response = await axios.post("http://localhost:5000/signup",data);
+  }
 
   const handleSignInClick = () => {
     setPanelActive(false);
   };
 
+  const [name,setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password,setPassword] = useState("");
+
   return (
-    <div className={`main-container ${panelActive ? "right-panel-active" : ""}`}>
+    <div className={`main-container`}>
       <div className="aside">
         <div className="logo">
           <span><img className="site-logo" src="site-logo_2.png" alt=""/></span>
@@ -32,10 +42,10 @@ export default function Login() {
               <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" id="name" />
-            <input type="email" placeholder="Email" id="email" />
-            <input type="password" placeholder="Password" id="password" />
-            <button type="button" onClick={SignUp}>Sign Up</button>
+            <input type="text" placeholder="Name" id="name" onChange={(e)=>{setName(e.target.value)}}/>
+            <input type="email" placeholder="Email" id="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" placeholder="Password" id="password" onChange={(e)=>{setPassword(e.target.value)}}/>
+            <button type="button" onClick={signUp}>Sign Up</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
@@ -57,12 +67,12 @@ export default function Login() {
             <div className="overlay-panel overlay-left">
               <h1>BOOK AN AMBULANCE</h1>
               <p>To continue with us please login with your personal info</p>
-              <button className="ghost" onClick={handleSignInClick}>Log In</button>
+              <button className="ghost" onClick={loginclick}>Log In</button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1>Start your journey with us</h1>
               <p></p>
-              <button className="ghost" onClick={handleSignUpClick}>Sign Up</button>
+              <button className="ghost" onClick={loginclick}>Sign Up</button>
             </div>
           </div>
         </div>

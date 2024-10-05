@@ -8,6 +8,9 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
   }
+  .navbar{
+    color: white;
+  }
   
   .navbar:hover {
     background-color: #5c4bc7; /* Lighter purple on hover */
@@ -21,13 +24,15 @@
   }
   
   .nav-links {
+    
     list-style: none;
     display: flex;
     gap: 20px;
   }
   
-  .nav-links li {
-    color: #fff;
+  .navbar-links li {
+    color: black;
+    
     cursor: pointer;
     font-size: 18px;
     transition: transform 0.2s;
@@ -35,5 +40,10 @@
   
   .nav-links li:hover {
     transform: translateY(-5px); /* Lift effect on hover */
+  }
+  .links{
+    color: white
+    ;
+
   }
   

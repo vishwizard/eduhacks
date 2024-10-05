@@ -16,10 +16,10 @@
   .card {
     background-color: #fff;
     padding: 20px;
-    margin: 10px 0;
+    margin: 11px -172px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transform-style: preserve-3d; /* Enable 3D effects */
+    transform-style: preserve-3d;
     transition: transform 0.3s ease;
   }
   

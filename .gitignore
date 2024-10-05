@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment variables
+.env
+
+# Production build (React)
+frontend/build/
+
+# Dependency directories
+frontend/node_modules/
+backend/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# React testing
+coverage/
+
+# Optional: Ignore dist (if you're building backend)
+backend/dist/

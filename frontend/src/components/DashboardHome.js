@@ -1,10 +1,19 @@
+// src/components/DashboardHome.js
 import React from 'react';
+import './DashboardHome.css';
 
 const DashboardHome = () => {
   return (
-    <div className="dashboard-home">
-      <h2>Welcome to the Dashboard</h2>
-      <p>Here you can generate tests, view history, and track your exam preparation progress.</p>
+    <div className="dashboard">
+      <h2 className="dashboard-header">Welcome to Test Preparation</h2>
+      <div className="card">
+        <h3 className="card-title">Test Generation</h3>
+        <p className="card-content">Generate personalized test questions.</p>
+      </div>
+      <div className="card">
+        <h3 className="card-title">Test History</h3>
+        <p className="card-content">View your past tests and performance.</p>
+      </div>
     </div>
   );
 };

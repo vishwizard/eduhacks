@@ -1,20 +1,32 @@
-import { useEffect } from 'react';
-import './App.css';
-import Login from './login';
+import React from 'react';
+// import './Sidebar.css'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import DashboardHome from './components/DashboardHome';
+import GenerateTest from './components/GenerateTest';
+import TestHistory from './components/TestHistory';
+import './App.css'; 
 
-import axios from 'axios';
-const fetchData = async () =>{
-  const response = await axios.get('http://www.localhost:5000');
-  console.log(response.data);
-}
-
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Login></Login>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<DashboardHome />} />
+          <Route path="/generate-test" element={<GenerateTest />} />
+          <Route path="/test-history" element={<TestHistory />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
+
+
+
+
+

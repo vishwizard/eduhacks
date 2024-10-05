@@ -350,3 +350,66 @@ input {
 	height: 40px;
 	width: 40px;
 }
+/* src/App.css */
+.app {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+  }
+  
+  .navbar {
+	background-color: #333;
+	color: white;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .main-layout {
+	display: flex;
+	flex: 1;
+  }
+  
+  .sidebar {
+	width: 250px;
+	background-color: #f4f4f4;
+	padding: 1rem;
+  }
+  
+  .sidebar ul {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .sidebar ul li {
+	margin: 1rem 0;
+  }
+  
+  .content {
+	padding: 2rem;
+	flex: 1;
+  }
+  
+  .generate-test,
+  .test-history {
+	margin-top: 2rem;
+  }
+  
+  form label {
+	display: block;
+	margin: 1rem 0;
+  }
+  
+  form input,
+  form select {
+	width: 100%;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+  }
+  
+  button {
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	cursor: pointer;
+  }
+  
